@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Welcome to the world of Javascript
+        </title>
+
+    </head>
+    <body>
+        <h1>Multiplications using functions with parameters</h1>
+        <script>
+            function productoftwonumbers(x,y) {
+                let z;
+                z = x * y;
+
+                return z;
+            }
+            let num1 = prompt("Enter the first number");
+            let num2 = prompt("Enter the second number");
+            let product = productoftwonumbers(num1,num2);
+            document.write("The product of " + num1 + " and " + num2 + " is " + product );
+        </script>
+    </body>
+</html>
