@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', 'sans-serif';
+            text-align: center;
+        }
+
+        nav {
+            background-color: #e6e6e6;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            border-radius: 10px;
+            color: black;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffffffb6;
+            transition: 1s;
+        }
+
+        img {
+            border-radius: 10px;
+            width: 180px;
+        }
+
+        /* ...existing code... */
+        body.fade-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* ...existing code... */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <h2>
+        ABOUT ME
+    </h2>
+    <p>My name is Safwan Ahnaf. Now stupid zombies, I do not want you to show and tell any of my informations.</p>
+    <p>Go to contact us and hack em</p>
+    <p>WHAT THE SIGMA DID U SAY!?</p>
+
+    <script>
+        // Select all navigation links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Only fade if navigating to a different page
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location = this.href;
+                    }, 500); // Match the transition duration
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

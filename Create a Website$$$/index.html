@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interesting Information</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', 'sans-serif';
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        body.fade-in {
+            opacity: 1;
+        }
+
+        nav {
+            background-color: #e6e6e6;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            border-radius: 10px;
+            color: black;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffffffb6;
+            transition: 1s;
+        }
+
+        img {
+            border-radius: 10px;
+            width: 180px;
+        }
+
+        body.fade-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+
+<body class="fade-in" class="fade-out">
+    <h1>Welcome to my Portfolio Website</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <h2>
+        Interesting Information!!!
+    </h2>
+    <img src="tiger.png">
+    <br>
+    <button onclick="tiger()">Learn about it</button>
+    <p id="tigoo"></p>
+    <img src="lion.png">
+    <br>
+    <button onclick="lion()">Learn about it</button>
+    <p id="linoo"></p>
+
+    <script>
+        // Select all navigation links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Only fade if navigating to a different page
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location = this.href;
+                    }, 500); // Match the transition duration
+                }
+            });
+        });
+        function tiger() {
+            document.getElementById("tigoo").innerHTML =
+                "The tiger (Panthera tigris) is a large cat and a member of the genus Panthera native to Asia. It has a powerful, muscular body with a large head and paws, a long tail and orange fur with black, mostly vertical stripes. It is traditionally classified into nine recent subspecies, though some recognise only two subspecies, mainland Asian tigers and the island tigers of the Sunda Islands. Throughout the tiger's range, it inhabits mainly forests, from coniferous and temperate broadleaf and mixed forests in the Russian Far East and Northeast China to tropical and subtropical moist broadleaf forests on the Indian subcontinent and Southeast Asia. The tiger is an apex predator and preys mainly on ungulates, which it takes by ambush. It lives a mostly solitary life and occupies home ranges, defending these from individuals of the same sex. The range of a male tiger overlaps with that of multiple females with whom he mates. Females give birth to usually two or three cubs that stay with their mother for about two years. When becoming independent, they leave their mother's home range and establish their own. Since the early 20th century, tiger populations have lost at least 93% of their historic range and are locally extinct in West and Central Asia, in large areas of China and on the islands of Java and Bali. Today, the tiger's range is severely fragmented. It is listed as Endangered on the IUCN Red List of Threatened Species, as its range is thought to have declined by 53% to 68% since the late 1990s. Major threats to tigers are habitat destruction and fragmentation due to deforestation, poaching for fur and the illegal trade of body parts for medicinal purposes. Tigers are also victims of human–wildlife conflict as they attack and prey on livestock in areas where natural prey is scarce. The tiger is legally protected in all range countries. National conservation measures consist of action plans, anti-poaching patrols and schemes for monitoring tiger populations. In several range countries, wildlife corridors have been established and tiger reintroduction is planned. The tiger is among the most popular of the world's charismatic megafauna. It has been kept in captivity since ancient times and has been trained to perform in circuses and other entertainment shows. The tiger featured prominently in the ancient mythology and folklore of cultures throughout its historic range and has continued to appear in culture worldwide." + '<br><a href="https://en.wikipedia.org/wiki/Tiger" target="_blank">Learn More</a>'
+
+        }
+        function lion() {
+            document.getElementById("linoo").innerHTML =
+                "The lion (Panthera leo) is a large cat of the genus Panthera, native to Sub-Saharan Africa and India. It has a muscular, broad-chested body; a short, rounded head; round ears; and a dark, hairy tuft at the tip of its tail. It is sexually dimorphic; adult male lions are larger than females and have a prominent mane. It is a social species, forming groups called prides. A lion's pride consists of a few adult males, related females, and cubs. Groups of female lions usually hunt together, preying mostly on medium-sized and large ungulates. The lion is an apex and keystone predator. The lion inhabits grasslands, savannahs, and shrublands. It is usually more diurnal than other wild cats, but when persecuted, it adapts to being active at night and at twilight. During the Neolithic period, the lion ranged throughout Africa and Eurasia, from Southeast Europe to India, but it has been reduced to fragmented populations in sub-Saharan Africa and one population in western India. It has been listed as Vulnerable on the IUCN Red List since 1996 because populations in African countries have declined by about 43% since the early 1990s. Lion populations are untenable outside designated protected areas. Although the cause of the decline is not fully understood, habitat loss and conflicts with humans are the greatest causes for concern. One of the most widely recognised animal symbols in human culture, the lion has been extensively depicted in sculptures and paintings, on national flags, and in literature and films. Lions have been kept in menageries since the time of the Roman Empire and have been a key species sought for exhibition in zoological gardens across the world since the late 18th century. Cultural depictions of lions have occurred worldwide, particularly as a symbol of power and royalty." + '<br><a href="https://en.wikipedia.org/wiki/Lion" target="_blank">Learn More</a>'
+        }
+
+        // ...existing code...
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('fade-in');
+        });
+        // ...existing code...
+    </script>
+</body>
+
+</html>

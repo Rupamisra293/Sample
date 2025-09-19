@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', 'sans-serif';
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        body.fade-in {
+            opacity: 1;
+        }
+
+        nav {
+            background-color: #e6e6e6;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            border-radius: 10px;
+            color: black;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffffffb6;
+            transition: 1s;
+        }
+
+        img {
+            border-radius: 10px;
+            width: 180px;
+        }
+
+        body.fade-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+
+<body class="fade-in" class="fade-out">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <h2>
+        CONTACT US
+    </h2>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.14754404247168!2d90.356446971004!3d23.805769246738418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1005052a681%3A0xaa1812f2bf6954d0!2sGreenYard%20Rose%20Garden!5e0!3m2!1sen!2sbd!4v1754634006383!5m2!1sen!2sbd"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p>1B</p>
+
+    <footer id="contact">
+        <p>
+            <span> Contact:</span>
+        <p id="myText">+880######7000</p>
+        <a id="makeHide" onclick="changeText()">Show</a>
+        </p>
+    </footer>
+
+    <script>
+        function changeText() {
+            const myText = document.getElementById('myText');
+            const makeHide = document.getElementById('makeHide');
+            if (makeHide.textContent === 'Show') {
+                myText.textContent = '+8801784777000';
+                makeHide.textContent = 'Hide';
+            } else {
+                myText.textContent = '+880######7000';
+                makeHide.textContent = 'Show';
+            }
+        }
+        // Select all navigation links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Only fade if navigating to a different page
+                if (this.href !== window.location.href) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location = this.href;
+                    }, 500); // Match the transition duration
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
